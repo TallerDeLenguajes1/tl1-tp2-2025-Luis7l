@@ -12,5 +12,6 @@ int main() {
         *(vt + i) = 1 + rand() % 100;  
         printf("%.2f\n", *(vt + i));     
     }
+    
     return 0;
 }
