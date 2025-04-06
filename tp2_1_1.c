@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 #define N 20
 #include <stdio.h>
 #include <stdlib.h>
