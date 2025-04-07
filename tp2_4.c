@@ -38,26 +38,69 @@ void listarPc(Compu pcs[], int cantidad)
 {
     for (int i = 0; i < cantidad; i++)
     {
-        printf("La pc numero %d cuenta con \n:", i + 1);
+       
+        printf("La pc numero %d cuenta con:\n", i + 1);
+       
         printf("Velocidad:%d\n", pcs[i].velocidad);
+
         printf("Año:%d\n", pcs[i].anio);
-        printf("Tipo de CPU:%d\n", pcs[i].tipo_CPU);
-        printf("La cantidad de nucles de la pc es:%d\n", pcs[i].cantidad_nucleos);
+
+        printf("Tipo de CPU:%s\n", pcs[i].tipo_CPU);
+
+        printf("La cantidad de nucleos de la pc es:%d\n", pcs[i].cantidad_nucleos);
+        printf("//////////\n");
     }
 }
 void mejorVelocidad(Compu pcs[], int cantidad)
 {
-    int compuMasRapida = 0;
-    int mayorVelocidad = 0;
-    for (int i = 0; i < cantidad; i++)
-    {
-        if (pcs[i].velocidad > mayorVelocidad)
+        int MaxVelocidad=pcs[0].velocidad;
+      
+
+        for (int i = 0; i < cantidad; i++)
         {
-            compuMasRapida = i;
+            if (pcs[i].velocidad>MaxVelocidad)
+            {
+                MaxVelocidad=pcs[i].velocidad;
+            }
+            
         }
-    }
-    printf("La compu mas rapida es la numero %d", compuMasRapida);
+        printf("Esta o Estas Compus comparten la misma velocidad:%d\n",MaxVelocidad);
+        for (int i = 0; i < cantidad; i++)
+        {
+            if (MaxVelocidad==pcs[i].velocidad)
+            {
+                
+                printf("La compu numero %d \n",i+1);
+            }
+            
+        }
+        
+        
+        
+    
+    
 }
 void masVieja(Compu pcs[], int cantidad)
 {
+    int pcVieja=pcs[0].anio;
+      
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].anio<pcVieja)
+        {
+            pcVieja=pcs[i].anio;
+        }
+        
+    }
+    printf("Esta Compu o Estas Compus comparten el mismo año :%d\n",pcVieja);
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (pcVieja==pcs[i].anio)
+        {
+            
+            printf("La compu numero %d \n",i+1);
+        }
+        
+    }
 }
